@@ -59,7 +59,7 @@ angular.module('app', [])
 								fecha : $scope.fecha,
 								genero : $scope.genero
 							};
-						$http.post('http://localhost:8080/funme/guardarRegistro?email='+$scope.email+'&password='+$scope.password+'&rpassword='+$scope.rpassword+'&nombre='+$scope.nombre+'&apellidos='+$scope.apellidos+'&fecha='+$scope.fecha+'&genero='+$scope.genero)
+						$http.post('http://localhost:8080/funme/guardarRegistro?email='+$scope.email+'&password='+$scope.password+'&nombre='+$scope.nombre+'&apellidos='+$scope.apellidos+'&fecha='+$scope.fecha+'&genero='+$scope.genero)
 						.success(function(data) {
 						 alert("EXITO");
 						}).error(function(data) {

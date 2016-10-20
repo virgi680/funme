@@ -53,7 +53,7 @@
     }
   </style>
 </head>
-<body>
+<body ng-controller="controlador">
 
 <nav class="navbar navbar-inverse navbar-top">
 	<div class="collapse navbar-collapse" id="myNavbar">
@@ -86,35 +86,35 @@
     <h2>Registro</h2> 
     </div>
     
-     <form action="crearRegistro" method="POST">
+     <form>
   <div class="form-group">
     <label for="email">Email:</label>
-    <input class="form-control input-sm" type="email" id="email" ng-model="email" required>
+    <input class="form-control input-sm" type="email" id="email" ng-model="email" name="email" required>
   </div>
     <div class="form-group">
     <label for="password">Password:</label>
-    <input type="password" class="form-control input-sm" id="password" ng-model="password" required>
+    <input type="password" class="form-control input-sm" id="password" ng-model="password" name="password" required>
   </div>
     <div class="form-group">
     <label for="rpassword">Repetir Password:</label>
-    <input type="password" class="form-control input-sm" id="rpassword" ng-model="rpassword" required>
+    <input type="password" class="form-control input-sm" id="rpassword" ng-model="rpassword" name="rpassword" required>
   </div>
   <div class="form-group">
     <label for="nombre">Nombre:</label>
-    <input type="nombre" class="form-control input-sm" id="nombre" ng-model="nombre" required>
+    <input type="nombre" class="form-control input-sm" id="nombre" ng-model="nombre" name="nombre" required>
   </div>
     <div class="form-group">
     <label for="apellidos">Apellidos:</label>
-    <input type="apellidos" class="form-control input-sm" id="apellidos" ng-model="apellidos" required>
+    <input type="apellidos" class="form-control input-sm" id="apellidos" ng-model="apellidos" name="apellidos" required>
   </div>
       <div class="form-group">
     <label for="fecha">Fecha de nacimiento:</label>
-    <input type="fecha" class="form-control input-sm" id="fecha" ng-model="fecha" required>
+    <input type="fecha" class="form-control input-sm" id="fecha" ng-model="fecha" name="fecha" required>
   </div>
       <div class="form-group">
     <label for="genero" required>Género:</label>
-   <label class="radio-inline"><input type="radio" ng-model="genero">Hombre</label>
-     <label class="radio-inline"><input type="radio" ng-model="genero">Mujer</label>
+   <label class="radio-inline"><input type="radio" ng-model="genero" id="genero" name="genero" value="Hombre">Hombre</label>
+     <label class="radio-inline"><input type="radio" ng-model="genero" id="genero" name="genero" value="Mujer">Mujer</label>
   </div>
 
   <div class="checkbox">
