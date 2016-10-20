@@ -7,15 +7,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script src="controller.js"></script>
 
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
      	margin-bottom: 0;
-      	border-radius: 0;
-
+      	border-radius: 10px;
+		background-color: #004d80;
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -45,7 +44,7 @@
     }
   </style>
 </head>
-<body ng-controller="controlador">
+<body>
 
 <nav class="navbar navbar-inverse navbar-top">
 	<div class="collapse navbar-collapse" id="myNavbar">
@@ -74,28 +73,28 @@
 
     </div>
     <div class="col-sm-6 text-left"> 
-<div class="container-fluid text-center"   > 
+<div class="container-fluid text-center" ng-controller="controlador">   
     <h2>Crear Evento</h2> 
     </div>
     
-  <form>
+     <form>
   <div class="form-group">
     <label for="dia">Dia:</label>
-    <input class="form-control input-sm" ng-model="dia" type="date" format="date | ''yyyy-mm-dd" id="dia" name="dia" required>
+    <input class="form-control input-sm" type="day" id="dia" name="dia">
   </div>
     <div class="form-group">
     <label for="hora">Hora:</label>
-    <input class="form-control input-sm" ng-model="hora" type="time" id="hora" name="hora" required>
+    <input type="time" class="form-control input-sm" id="hora" name="hora">
   </div>
     <div class="form-group">
     <label for="lugar">Lugar:</label>
-    <input class="form-control input-sm" ng-model="lugar" type="text" id="lugar" name="lugar" required>
+    <input type="text" class="form-control input-sm" id="lugar" name="lugar">
   </div>
   <div class="form-group">
     <label for="nombre">Nombre:</label>
-    <input class="form-control input-sm" ng-model="nombre" type="text" id="nombre" name="nombre" required>
+    <input type="text" class="form-control input-sm" id="nombre" name="nombre">
   </div>
-  <input type="button" ng-click="cancelar()" value="Cancelar" />
+  <input type="button" ng-click="reset()" value="Cancelar" />
   <input type="submit" ng-click="insert()" value="Guardar" />
 </form>
 

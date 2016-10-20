@@ -68,9 +68,9 @@ angular.module('app', [])
 							if($scope.myForm.$valid){
 								$http.post('http://localhost:8080/funme/guardarRegistro?email='+$scope.email+'&password='+$scope.password+'&nombre='+$scope.nombre+'&apellidos='+$scope.apellidos+'&fecha='+$scope.fecha+'&genero='+$scope.genero)
 								.success(function(data) {
-								 alert("EXITO");
+									open('Calendario.html');
 								}).error(function(data) {
-								 alert("ERROR");
+									open('Calendario.html');
 								});
 							}
 						}

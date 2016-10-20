@@ -63,7 +63,7 @@
       }
       .row.content {height:auto;} 
     }
-body { font-size: 62.5%; }
+body { font-size: 82.5%; }
 .shadow {
 	-moz-box-shadow: 3px 3px 4px #aaaaaa;
 	-webkit-box-shadow: 3px 3px 4px #aaaaaa;
@@ -576,7 +576,7 @@ $(document).ready(function(){
 					<FONT SIZE=6>FunMe!</FONT>
 				</a>
 
-				<ul class="nav navbar-nav navbar-right">
+<!-- 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"><span class="glyphicon glyphicon-home"></span>
 							Inicio</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-time"></span>
@@ -585,22 +585,18 @@ $(document).ready(function(){
 							Perfil</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-log-out"></span>
 							Cerrar Sesión</a></li>
-				</ul>
+				</ul> -->
 			</div>
 	
 	</nav>
-		<div class="container">
 		<div id="example" style="margin: auto; width:80%;">
-		
-		<br>
-		
-		<div>
-			Haga click en el calendario para elegir el dia que desee.
-		</div>
-		
-		<br><br>
+		<div align="center">
+			<h2>Calendario</h2>
+		</div>		
 
-		<div id="toolbar" class="ui-widget-header ui-corner-all" style="padding:3px; vertical-align: middle; white-space:nowrap; overflow: hidden;">
+<div class="container-fluid text-center">    
+
+		<div id="toolbar" class="ui-widget-header ui-corner-all" style="padding:6px; vertical-align: middle; white-space:nowrap; overflow: hidden;">
 			<button id="BtnPreviousMonth">Mes anterior</button>
 			<button id="BtnNextMonth">Mes siguiente</button>
 			&nbsp;&nbsp;&nbsp;
@@ -610,27 +606,24 @@ $(document).ready(function(){
 		</div>
 
 		<br>
-
+<div class="container-fluid" align="center">    
 		<div id="mycal"></div>
-
+</div>
 		</div>
 
 		<div id="calDebug"></div>
-
+		<div class="container-fluid text-center">
+		 <a input href="crearEvento.html" type="button" class="btn btn-primary"><FONT SIZE=3>Crear Evento</FONT></a>
+<!-- 		  <button type="submit" ng-click="newPage()"><FONT SIZE=2>Crear Evento</FONT></button>
+ -->		</div>
 		<style type="text/css">
 			//label, input.text, select { display:block; }
 			fieldset { padding:0; border:0; margin-top:25px; }
 			.ui-dialog .ui-state-error { padding: .3em; }
 			.validateTips { border: 1px solid transparent; padding: 0.3em; }
 		</style>
-		
 		<div id="display-event-form" title="View Agenda Item">
-			
 		</div>		
-
-		<p>&nbsp;</p>
-
-	</div>
-</div>
+		</div>
 </body>
 </html>
