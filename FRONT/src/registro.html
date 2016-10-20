@@ -78,38 +78,38 @@
      <form action="crearRegistro" method="POST">
   <div class="form-group">
     <label for="email">Email:</label>
-    <input class="form-control input-sm" type="email" id="email" name="email">
+    <input class="form-control input-sm" type="email" id="email" ng-model="email" required>
   </div>
     <div class="form-group">
     <label for="password">Password:</label>
-    <input type="password" class="form-control input-sm" id="password" name="password">
+    <input type="password" class="form-control input-sm" id="password" ng-model="password" required>
   </div>
     <div class="form-group">
     <label for="rpassword">Repetir Password:</label>
-    <input type="password" class="form-control input-sm" id="rpassword" name="rpassword">
+    <input type="password" class="form-control input-sm" id="rpassword" ng-model="rpassword" required>
   </div>
   <div class="form-group">
     <label for="nombre">Nombre:</label>
-    <input type="nombre" class="form-control input-sm" id="nombre" name="nombre">
+    <input type="nombre" class="form-control input-sm" id="nombre" ng-model="nombre" required>
   </div>
     <div class="form-group">
     <label for="apellidos">Apellidos:</label>
-    <input type="apellidos" class="form-control input-sm" id="apellidos" name="apellidos">
+    <input type="apellidos" class="form-control input-sm" id="apellidos" ng-model="apellidos" required>
   </div>
       <div class="form-group">
     <label for="fecha">Fecha de nacimiento:</label>
-    <input type="fecha" class="form-control input-sm" id="fecha" name="fecha">
+    <input type="fecha" class="form-control input-sm" id="fecha" ng-model="fecha" required>
   </div>
       <div class="form-group">
-    <label for="genero">Género:</label>
-   <label class="radio-inline"><input type="radio" name="genero">Hombre</label>
-     <label class="radio-inline"><input type="radio" name="genero">Mujer</label>
+    <label for="genero" required>Género:</label>
+   <label class="radio-inline"><input type="radio" ng-model="genero">Hombre</label>
+     <label class="radio-inline"><input type="radio" ng-model="genero">Mujer</label>
   </div>
 
   <div class="checkbox">
     <label><input type="checkbox"> Acepto los términos y condiciones que me invento</label>
   </div>
-  <button type="submit" >Guardar</button>
+  <button type="submit" ng-click="guardarRegistro()">Guardar</button>
 </form>
 
     </div>
