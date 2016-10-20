@@ -8,7 +8,9 @@ angular.module('app', [])
 						open('crearEvento.html',
 								'top=300,left=300,width=300,height=300');
 					}
-
+					$scope.cancelar = function() {
+						open('Calendario.html');
+					}
 					$scope.insert = function() {
 
 						var insertarEv = {
