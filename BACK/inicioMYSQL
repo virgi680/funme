@@ -1,0 +1,29 @@
+
+
+
+
+CREATE TABLE usuario(
+ID_usuario  	int(16) auto_increment,
+EMAIL       	VARCHAR(100) NOT NULL UNIQUE,
+PASSWORD    	VARCHAR(100),
+NOMBRE       	VARCHAR(100),
+APELLIDO    	VARCHAR(100),
+fechaNacimiento VARCHAR(10),        
+genero  	VARCHAR(5),
+PRIMARY KEY (ID_usuario)
+);
+
+
+
+CREATE TABLE eventos(
+ID_evento  	int(16) auto_increment,
+DIA       	VARCHAR(10) ,
+HORA    	VARCHAR(10),
+NOMBRE       	VARCHAR(100) NOT NULL UNIQUE,
+LUGAR     	VARCHAR(100),
+PRIMARY KEY (ID_evento)
+);
+
+
+
+

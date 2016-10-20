@@ -30,65 +30,24 @@ import java.sql.*;
 @Controller
 public class HomeController {
 
-	//Pantalla de inicio
-	/*@RequestMapping(value = "/")
-	public String home() {	
-		//return "home";
-		//return "vista_buscarEvento";
-		return "vista_crearEvento";
-		//return "crearEvento";
-        ///System.out.println("primera pagina");
-        //return "redirect:/./crearEvento.html";
-	}*/
-	
+	int check=0;
 
-	
 	@RequestMapping(value="/crearEvento")
 	public @ResponseBody void formularioPeticiones(@RequestParam(value="dia",required=false) String dia,@RequestParam(value="hora",required=false) String hora,@RequestParam(value="lugar",required=false) String lugar,@RequestParam(value="nombre",required=false) String nombre) {
         System.out.println(":   "+dia+" "+hora+" "+lugar+" "+nombre);
-	}
-
-	
-	/*@RequestMapping(value="/buscarEvento", method = RequestMethod.GET)
-	public @ResponseBody String formularioPeticiones(Model modelo,@RequestParam(value="localizacion",required=false) String localizacion, @RequestParam(value="interes",required=true) String interes) {
-        System.out.println("hola");
-		return "redirect:/alberto";
-	}
-
-	
-	
-	
-	@RequestMapping(value = "/")
-	public @ResponseBody String formularioPeticiones(/*HttpServletRequest request, Model model) {
-	//	return "vista_registro";
-	//}
-	
-	
-
-	
-	//@RequestMapping(value="/crearEvento")
-	//public @ResponseBody String formularioPeticiones(Model modelo,@RequestParam(value="dia",required=false) String dia,@RequestParam(value="hora",required=false) String hora,@RequestParam(value="lugar",required=false) String lugar,@RequestParam(value="nombre",required=false) String nombre) {
-    //    System.out.println("adios");
-
-	//	MySQL my= new MySQL();
-    //    my.escribirDatosMySQL_EVENTOS(dia,hora,lugar,nombre);
         
-	//	return "Evento creado el dia: "+dia+" hora: "+hora+" lugar: "+lugar+" nombre evento: "+nombre;        
-	//}
+    	MySQL my= new MySQL();
+        check = my.escribirDatosMySQL_EVENTOS(dia,hora,lugar,nombre);
+	}
+	@RequestMapping(value="/guardarRegistro")
+    public @ResponseBody void guardarRegistro(@RequestParam(value="email",required=false) String email, @RequestParam(value="password",required=false) String password, @RequestParam(value="nombre",required=false) String nombre, @RequestParam(value="apellidos",required=false) String apellidos, @RequestParam(value="fechaNacimiento",required=false) String fechaNacimiento, @RequestParam(value="genero",required=false) String genero) {
+		System.out.println(email+"  "+password+"  "+nombre+"  "+apellidos+"  "+fechaNacimiento+"  "+genero);
 	
-	//@RequestMapping(value="/crearRegistro")
-	//public @ResponseBody String formularioPeticiones(Model modelo,@RequestParam(value="email",required=false) String email,@RequestParam(value="password",required=false) String password,@RequestParam(value="rpassword",required=false) String rpassword,@RequestParam(value="nombre",required=false) String nombre,@RequestParam(value="apellidos",required=false) String apellidos,@RequestParam(value="fecha",required=false) String fecha,@RequestParam(value="genero",required=false) String genero) {
-
-	//	return "Registro creado email: "+email+" nombre: "+nombre+" apellido: "+apellidos;        
-	//}*
-	
-/*	@RequestMapping(value="/crearEvento")
-	public @ResponseBody String formularioPeticiones(@RequestBody String jsonEntrada) {
-        System.out.println("adios");
-
-//		MySQL my= new MySQL();
-//        my.escribirDatosMySQL_EVENTOS(dia,hora,lugar,nombre);
+    	MySQL my= new MySQL();
+        check = my.escribirDatosMySQL_REGISTRO(email,password,nombre,apellidos,fechaNacimiento,genero);
         
-		return null;        
-	}*/
+        /*Usuario u = new Usuario();
+        u = my.leerDatosUsuario(email);
+        System.out.println(u.getNombre()+u.getApellido()+u.getEmail()+u.getFechaNacimiento());   */
+	}
 }
