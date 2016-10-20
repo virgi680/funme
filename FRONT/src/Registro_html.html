@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en">
 <head>
-  <title>Crear Evento</title>
+  <title>Registro</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-  <script src="controller.js"></script>
-
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -45,7 +42,7 @@
     }
   </style>
 </head>
-<body ng-controller="controlador">
+<body>
 
 <nav class="navbar navbar-inverse navbar-top">
 	<div class="collapse navbar-collapse" id="myNavbar">
@@ -74,29 +71,45 @@
 
     </div>
     <div class="col-sm-6 text-left"> 
-<div class="container-fluid text-center"   > 
-    <h2>Crear Evento</h2> 
+<div class="container-fluid text-center">   
+    <h2>Registro</h2> 
     </div>
     
-  <form>
+     <form action="crearRegistro" method="POST">
   <div class="form-group">
-    <label for="dia">Dia:</label>
-    <input class="form-control input-sm" ng-model="dia" type="date" format="date | ''yyyy-mm-dd" id="dia" name="dia">
+    <label for="email">Email:</label>
+    <input class="form-control input-sm" type="email" id="email" ng-model="email" required>
   </div>
     <div class="form-group">
-    <label for="hora">Hora:</label>
-    <input class="form-control input-sm" ng-model="hora" type="time" id="hora" name="hora">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control input-sm" id="password" ng-model="password" required>
   </div>
     <div class="form-group">
-    <label for="lugar">Lugar:</label>
-    <input class="form-control input-sm" ng-model="lugar" type="text" id="lugar" name="lugar">
+    <label for="rpassword">Repetir Password:</label>
+    <input type="password" class="form-control input-sm" id="rpassword" ng-model="rpassword" required>
   </div>
   <div class="form-group">
     <label for="nombre">Nombre:</label>
-    <input class="form-control input-sm" ng-model="nombre" type="text" id="nombre" name="nombre">
+    <input type="nombre" class="form-control input-sm" id="nombre" ng-model="nombre" required>
   </div>
-  <input type="button" ng-click="reset()" value="Cancelar" />
-  <input type="submit" ng-click="insert()" value="Guardar" />
+    <div class="form-group">
+    <label for="apellidos">Apellidos:</label>
+    <input type="apellidos" class="form-control input-sm" id="apellidos" ng-model="apellidos" required>
+  </div>
+      <div class="form-group">
+    <label for="fecha">Fecha de nacimiento:</label>
+    <input type="fecha" class="form-control input-sm" id="fecha" ng-model="fecha" required>
+  </div>
+      <div class="form-group">
+    <label for="genero" required>Género:</label>
+   <label class="radio-inline"><input type="radio" ng-model="genero">Hombre</label>
+     <label class="radio-inline"><input type="radio" ng-model="genero">Mujer</label>
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox"> Acepto los términos y condiciones que me invento</label>
+  </div>
+  <button type="submit" ng-click="guardarRegistro()">Guardar</button>
 </form>
 
     </div>
