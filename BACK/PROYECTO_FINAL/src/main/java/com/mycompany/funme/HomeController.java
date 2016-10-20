@@ -43,16 +43,11 @@ public class HomeController {
 	
 
 	
-	/*@RequestMapping(value="/crearEvento")
+	@RequestMapping(value="/crearEvento")
 	public @ResponseBody void formularioPeticiones(@RequestParam(value="dia",required=false) String dia,@RequestParam(value="hora",required=false) String hora,@RequestParam(value="lugar",required=false) String lugar,@RequestParam(value="nombre",required=false) String nombre) {
         System.out.println(":   "+dia+" "+hora+" "+lugar+" "+nombre);
-	}*/
-	@RequestMapping(value="/crearEvento")
-	public @ResponseBody void formularioPeticiones(@RequestParam(value="insertarEv",required=false) Object object) throws JsonProcessingException {
-		ObjectMapper objectMapper = new ObjectMapper();
-		String evento=objectMapper.writeValueAsString(object);
-		System.out.println(evento);
 	}
+
 	
 	/*@RequestMapping(value="/buscarEvento", method = RequestMethod.GET)
 	public @ResponseBody String formularioPeticiones(Model modelo,@RequestParam(value="localizacion",required=false) String localizacion, @RequestParam(value="interes",required=true) String interes) {
