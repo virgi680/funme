@@ -59,12 +59,20 @@ angular.module('app', [])
 								fecha : $scope.fecha,
 								genero : $scope.genero
 							};
-						$http.post('http://localhost:8080/funme/guardarRegistro?email='+$scope.email+'&password='+$scope.password+'&nombre='+$scope.nombre+'&apellidos='+$scope.apellidos+'&fecha='+$scope.fecha+'&genero='+$scope.genero)
-						.success(function(data) {
-						 alert("EXITO");
-						}).error(function(data) {
-						 alert("ERROR");
-						});
+						if($scope.password != $scope.rpassword){
+							alert("Las passwords deben de coincidir");
+						}
+						else{
+							if($scope.myForm.$valid){
+								$http.post('http://localhost:8080/funme/guardarRegistro?email='+$scope.email+'&password='+$scope.password+'&nombre='+$scope.nombre+'&apellidos='+$scope.apellidos+'&fecha='+$scope.fecha+'&genero='+$scope.genero)
+								.success(function(data) {
+								 alert("EXITO");
+								}).error(function(data) {
+								 alert("ERROR");
+								});
+							}
+						}
+
 					}
 					
 				} ]);

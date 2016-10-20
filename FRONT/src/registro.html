@@ -86,7 +86,7 @@
     <h2>Registro</h2> 
     </div>
     
-     <form>
+     <form name="myForm">
   <div class="form-group">
     <label for="email">Email:</label>
     <input class="form-control input-sm" type="email" id="email" ng-model="email" name="email" required>
@@ -113,12 +113,12 @@
   </div>
       <div class="form-group">
     <label for="genero" required>Género:</label>
-   <label class="radio-inline"><input type="radio" ng-model="genero" id="genero" name="genero" value="Hombre">Hombre</label>
-     <label class="radio-inline"><input type="radio" ng-model="genero" id="genero" name="genero" value="Mujer">Mujer</label>
+   <label class="radio-inline"><input type="radio" ng-model="genero" id="genero" name="genero" value="Hombre" required>Hombre</label>
+     <label class="radio-inline"><input type="radio" ng-model="genero" id="genero" name="genero" value="Mujer" required>Mujer</label>
   </div>
 
   <div class="checkbox">
-    <label><input type="checkbox"> Acepto los términos y condiciones que me invento</label>
+    <label><input type="checkbox" id="terminos" name="terminos" value="terminos" ng-model="terminos" required> Acepto los términos y condiciones que me invento</label>
   </div>
   <button type="submit" ng-click="guardarRegistro()">Guardar</button>
 </form>
