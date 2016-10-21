@@ -1,3 +1,9 @@
+INSTALAR MYSQL:
+sudo apt-get install mysql-server
+
+LANZAR BASE DE DATOS: (usuario y contraseña para acceder a la base de datos).
+sudo mysql -u root -p 1234
+
 Comandos mysql:
 
 VER BASES DE DATOS:
@@ -6,7 +12,7 @@ VER BASES DE DATOS:
 CREAR BASE DE DATOS:
 >>	create database funme;
 
-BORRAR BASE DE DATOS:
+BORRAR BASE DE DATOS O TABLAS:
 >>	DROP TABLE usuario;
 >>	DROP DATABASE funme;
 
@@ -40,7 +46,7 @@ PRIMARY KEY (ID_evento)
 VER TABLAS CREADAS:
 >>	show tables;
 
-Ejemplos para Postman:
+Ejemplos:
 INSERTAR UNA FILA:
 >>	insert into usuario(id_usuario,email,password,nombre,apellido,fechaNacimiento,genero)values('1','nforcen@gmail.com','1234','nacho','forcen','28/03','m');
 
