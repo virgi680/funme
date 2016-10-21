@@ -1,8 +1,10 @@
 INSTALAR MYSQL:
 sudo apt-get install mysql-server
 
-LANZAR BASE DE DATOS: (usuario y contraseña para acceder a la base de datos).
-sudo mysql -u root -p 1234
+LANZAR BASE DE DATOS: (usuario y contraseña para acceder a la base de datos poner usuario root y password 1234).
+sudo mysql -u root -p
+>>Enter password:
+  1234
 
 Comandos mysql:
 
